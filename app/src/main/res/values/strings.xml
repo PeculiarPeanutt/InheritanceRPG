@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InheritanceRPG</string>
+    <string-array name="Heroes">
+        <item>Rabbit Assassin</item>
+        <item>Warrior</item>
+        <item>Healer</item>
+        <item>Dragonoid</item>
+        <item>Gunner</item>
+    </string-array>
+    <string-array name="Monsters">
+        <item>Slime</item>
+        <item>Goblin</item>
+        <item>Fairy</item>
+        <item>Bakunawa</item>
+        <item>Mayari</item>
+    </string-array>
+</resources>
