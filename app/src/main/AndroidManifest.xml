@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".monsters"></activity>
+        <activity android:name=".GUNNER"></activity>
+        <activity android:name=".DRAGONOID" />
+        <activity android:name=".WARRIOR" />
+        <activity android:name=".HEALER" />
+        <activity android:name=".ASSASSIN" />
+        <activity android:name=".monsters" />
         <activity android:name=".MainActivity" />
         <activity android:name=".firstAct">
             <intent-filter>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ASSASSIN">
+
 
     <Spinner
         android:layout_width="0dp"
@@ -40,36 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/beaniexx"/>
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/bq"/>
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/bros" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/cutteee"/>
 
 
     <TextView
@@ -153,25 +124,25 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-   <EditText
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       android:id="@+id/editAdd"
-       app:layout_constraintStart_toEndOf="@id/addlvl"
-       app:layout_constraintTop_toBottomOf="@id/txt5a"
-       android:hint="Level 1-40"
-       android:inputType="number"
-       android:layout_marginTop="20dp"
-       app:layout_constraintEnd_toEndOf="parent"
-       android:layout_marginEnd="30dp"
-       android:layout_marginRight="30dp"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editAdd"
+        app:layout_constraintStart_toEndOf="@id/addlvl"
+        app:layout_constraintTop_toBottomOf="@id/txt5a"
+        android:hint="Level 1-99"
+        android:inputType="number"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Enter"
+        android:text="Select"
         android:layout_marginLeft="0.70in"
         android:layout_marginStart="0.70in"
         app:layout_constraintTop_toBottomOf="@id/editAdd"
@@ -189,5 +160,7 @@
         app:layout_constraintTop_toBottomOf="@id/editAdd"
         android:layout_marginTop="5dp"
         />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

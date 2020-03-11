@@ -158,10 +158,10 @@ public class Hero extends Characters {
 
     //methods
     public double baseHPwSTR () {
-        return super.getBaseHP() + (20*baseSTR);
+        return getBaseHP() + (20*strWithGrowth());
     }
     public double baseMPwINT () {
-        return super.getBaseMP() + (20*baseINT);
+        return getBaseMP() + (20*intWithGrowth());
     }
     public double strWithGrowth() {
         return baseSTR + (strGrowth*lvl);
@@ -185,7 +185,7 @@ public class Hero extends Characters {
         return getEvasion()+getAgiGrowth()*(.0004);
     }
     public double mAtkPts () {
-        return super.getmAtk()*(.33*intWithGrowth());
+        return super.getmAtk()*(.3*intWithGrowth());
     }
 
 }

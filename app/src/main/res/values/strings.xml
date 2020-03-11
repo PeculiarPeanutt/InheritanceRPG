@@ -14,4 +14,21 @@
         <item>Bakunawa</item>
         <item>Mayari</item>
     </string-array>
+    <string-array name="assassin_sub_class">
+        <item>Usaginobi</item>
+        <item>Asurabbit</item>
+    </string-array>
+    <string-array name="warrior_sub_class">
+        <item></item>
+    </string-array>
+    <string-array name="healer_sub_class">
+        <item>Battle Priest</item>
+        <item>High Priest</item>
+    </string-array>
+    <string-array name="gunner_sub_class">
+        <item></item>
+    </string-array>
+    <string-array name="dragonoid_sub_class">
+        <item></item>
+    </string-array>
 </resources>

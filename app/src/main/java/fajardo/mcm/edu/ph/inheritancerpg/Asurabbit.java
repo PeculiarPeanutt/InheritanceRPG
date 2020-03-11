@@ -20,7 +20,7 @@ public class Asurabbit extends Hero {
     }
 
     public double baseMPwAGI () {
-        return super.getBaseMP() + (10*agiWithGrowth()+10*super.intWithGrowth());
+        return super.getBaseMP() + (10*agiWithGrowth()+10*intWithGrowth());
     }
 
 
