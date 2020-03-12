@@ -25,9 +25,5 @@ public class Rocketeer extends Hero {
         return super.getpAtk()+(.2*agiWithGrowth())+(2*strWithGrowth()) ;
     }
 
-    @Override
-    public double mAtkPts () {
-        return super.getmAtk()*(.2*intWithGrowth()+.1*agiWithGrowth());
-    }
 
 }

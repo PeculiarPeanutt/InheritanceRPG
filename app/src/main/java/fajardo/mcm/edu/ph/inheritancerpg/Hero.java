@@ -179,13 +179,13 @@ public class Hero extends Characters {
         return super.getpDef()+(.1*agiWithGrowth());
     }
     public double mDefPts () {
-        return super.getmDef()+(.2*intWithGrowth());
+        return super.getmDef()+(.1*intWithGrowth());
     }
     public double evasionPts() {
         return getEvasion()+getAgiGrowth()*(.0004);
     }
     public double mAtkPts () {
-        return super.getmAtk()*(.3*intWithGrowth());
+        return super.getmAtk()*(.1*intWithGrowth());
     }
 
 }
