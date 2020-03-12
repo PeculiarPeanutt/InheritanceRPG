@@ -19,16 +19,19 @@
         <item>Asurabbit</item>
     </string-array>
     <string-array name="warrior_sub_class">
-        <item></item>
+        <item>Valkyrie</item>
+        <item>Shield Maiden</item>
     </string-array>
     <string-array name="healer_sub_class">
         <item>Battle Priest</item>
         <item>High Priest</item>
     </string-array>
     <string-array name="gunner_sub_class">
-        <item></item>
+        <item>Rocketeer</item>
+        <item>Sniper</item>
     </string-array>
     <string-array name="dragonoid_sub_class">
-        <item></item>
+        <item>Dragon Tamer</item>
+        <item>Elemental Dracomancer</item>
     </string-array>
 </resources>

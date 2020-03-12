@@ -75,8 +75,8 @@ public class ASSASSIN extends AppCompatActivity {
                     txt.setText(usaginobi.getHeroClass());
                     txt2.setText("ID: "+idstart+usaginobi.getHeroID() + " Level: "+usaginobi.getLvl());
                     txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
-                    txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+usaginobi.pDefPts()+
-                            "\nmAtk: "+usaginobi.mAtkPts()+" mDef: "+usaginobi.mDefPts());
+                    txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
+                            "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
                     txt4a.setText("STR: "+wholenum.format(usaginobi.strWithGrowth())+" INT: "+wholenum.format(usaginobi.intWithGrowth())+
                             " AGI: "+wholenum.format(usaginobi.agiWithGrowth()));
                     txt5.setText("Evasion Rate: "+decF.format(usaginobi.evasionPts()));
@@ -86,8 +86,8 @@ public class ASSASSIN extends AppCompatActivity {
                 if (spin.equals("Asurabbit")) {
 
                     //pictures
-                    monpic1.setVisibility(View.VISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
+                    monpic1.setVisibility(View.INVISIBLE);
+                    monpic2.setVisibility(View.VISIBLE);
 
                     asura.setLvl(40);
 
@@ -95,8 +95,8 @@ public class ASSASSIN extends AppCompatActivity {
                     txt.setText(asura.getHeroClass());
                     txt2.setText("ID: "+idstart+asura.getHeroID() + " Level: "+asura.getLvl());
                     txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
-                    txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+asura.pDefPts()+
-                            "\nmAtk: "+asura.mAtkPts()+" mDef: "+asura.mDefPts());
+                    txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
+                            "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
                     txt4a.setText("STR: "+wholenum.format(asura.strWithGrowth())+" INT: "+wholenum.format(asura.intWithGrowth())+
                             " AGI: "+wholenum.format(asura.agiWithGrowth()));
                     txt5.setText("Evasion Rate: "+decF.format(asura.evasionPts()));
@@ -133,8 +133,8 @@ public class ASSASSIN extends AppCompatActivity {
                         txt.setText(asura.getHeroClass());
                         txt2.setText("ID: "+idstart+asura.getHeroID() + " Level: "+asura.getLvl());
                         txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
-                        txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+asura.pDefPts()+
-                                "\nmAtk: "+asura.mAtkPts()+" mDef: "+asura.mDefPts());
+                        txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
+                                "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
                         txt4a.setText("STR: "+wholenum.format(asura.strWithGrowth())+" INT: "+wholenum.format(asura.intWithGrowth())+
                                 " AGI: "+wholenum.format(asura.agiWithGrowth()));
                         txt5.setText("Evasion Rate: "+decF.format(asura.evasionPts()));
@@ -162,8 +162,8 @@ public class ASSASSIN extends AppCompatActivity {
                         txt.setText(usaginobi.getHeroClass());
                         txt2.setText("ID: "+idstart+usaginobi.getHeroID() + " Level: "+usaginobi.getLvl());
                         txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
-                        txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+usaginobi.pDefPts()+
-                                "\nmAtk: "+usaginobi.mAtkPts()+" mDef: "+usaginobi.mDefPts());
+                        txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
+                                "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
                         txt4a.setText("STR: "+wholenum.format(usaginobi.strWithGrowth())+" INT: "+wholenum.format(usaginobi.intWithGrowth())+
                                 " AGI: "+wholenum.format(usaginobi.agiWithGrowth()));
                         txt5.setText("Evasion Rate: "+decF.format(usaginobi.evasionPts()));

@@ -1,8 +1,8 @@
 package fajardo.mcm.edu.ph.inheritancerpg;
 
-public class BattlePriest extends Hero {
+public class DragonTamer extends Hero {
 
-    public BattlePriest (int id, double baseHP, double baseMP, double pAtk,
+    public DragonTamer (int id, double baseHP, double baseMP, double pAtk,
                          double mAtk, double pDef, double mDef, String heroClass,
                          int heroID, int lvl, double exp, double baseSTR,
                          double baseAGI, double baseINT , double strGrowth,
@@ -13,13 +13,20 @@ public class BattlePriest extends Hero {
                 agiGrowth, intGrowth, evasion);
 
     }
+
     @Override
     public double baseHPwSTR () {
-        return super.getBaseHP() + (20*strWithGrowth()+10*intWithGrowth());
+        return getBaseHP() + (20*strWithGrowth());
     }
 
     @Override
-    public double baseMPwINT () {
-        return super.getBaseMP() + (30*intWithGrowth());
+    public double pAtkPts () {
+        return super.getpAtk()+(.2*agiWithGrowth())+(.1*intWithGrowth()) ;
     }
+
+    @Override
+    public double pDefPts () {
+        return super.getpDef()+(.2*agiWithGrowth());
+    }
+
 }

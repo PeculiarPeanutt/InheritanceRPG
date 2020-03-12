@@ -158,10 +158,10 @@ public class Hero extends Characters {
 
     //methods
     public double baseHPwSTR () {
-        return getBaseHP() + (20*strWithGrowth());
+        return getBaseHP() + (10*strWithGrowth());
     }
     public double baseMPwINT () {
-        return getBaseMP() + (20*intWithGrowth());
+        return getBaseMP() + (10*intWithGrowth());
     }
     public double strWithGrowth() {
         return baseSTR + (strGrowth*lvl);

@@ -15,7 +15,7 @@ public class HighPriest extends Hero{
     }
 
     public double baseHPwINT () {
-        return super.getBaseHP() + (40*intWithGrowth());
+        return super.getBaseHP() + (30*intWithGrowth());
     }
 
     @Override
