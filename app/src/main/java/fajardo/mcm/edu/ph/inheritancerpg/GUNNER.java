@@ -73,7 +73,7 @@ public class GUNNER extends AppCompatActivity {
 
                     //layout display
                     txt.setText(sniper.getHeroClass());
-                    txt2.setText("ID: "+idstart+sniper.getHeroID() + " Level: "+sniper.getLvl());
+                    txt2.setText("ID: "+idstart+sniper.getHeroID() + "a Level: "+sniper.getLvl());
                     txt3.setText("HP: "+wholenum.format(sniper.baseHPwSTR())+" MP: "+wholenum.format(sniper.baseHPwSTR()));
                     txt4.setText("pAtk: "+decF.format(sniper.pAtkPts())+" pDef: "+decF.format(sniper.pDefPts())+
                             "\nmAtk: "+decF.format(sniper.mAtkPts())+" mDef: "+decF.format(sniper.mDefPts()));
@@ -93,7 +93,7 @@ public class GUNNER extends AppCompatActivity {
 
                     //layout display
                     txt.setText(rocketeer.getHeroClass());
-                    txt2.setText("ID: "+idstart+rocketeer.getHeroID() + " Level: "+rocketeer.getLvl());
+                    txt2.setText("ID: "+idstart+rocketeer.getHeroID() + "b Level: "+rocketeer.getLvl());
                     txt3.setText("HP: "+wholenum.format(rocketeer.baseHPwSTR())+" MP: "+wholenum.format(rocketeer.baseHPwSTR()));
                     txt4.setText("pAtk: "+decF.format(rocketeer.pAtkPts())+" pDef: "+decF.format(rocketeer.pDefPts())+
                             "\nmAtk: "+decF.format(rocketeer.mAtkPts())+" mDef: "+decF.format(rocketeer.mDefPts()));
@@ -131,7 +131,7 @@ public class GUNNER extends AppCompatActivity {
 
 
                         txt.setText(rocketeer.getHeroClass());
-                        txt2.setText("ID: "+idstart+rocketeer.getHeroID() + " Level: "+rocketeer.getLvl());
+                        txt2.setText("ID: "+idstart+rocketeer.getHeroID() + "b Level: "+rocketeer.getLvl());
                         txt3.setText("HP: "+wholenum.format(rocketeer.baseHPwSTR())+" MP: "+wholenum.format(rocketeer.baseHPwSTR()));
                         txt4.setText("pAtk: "+decF.format(rocketeer.pAtkPts())+" pDef: "+decF.format(rocketeer.pDefPts())+
                                 "\nmAtk: "+decF.format(rocketeer.mAtkPts())+" mDef: "+decF.format(rocketeer.mDefPts()));
@@ -160,7 +160,7 @@ public class GUNNER extends AppCompatActivity {
 
 
                         txt.setText(sniper.getHeroClass());
-                        txt2.setText("ID: "+idstart+sniper.getHeroID() + " Level: "+sniper.getLvl());
+                        txt2.setText("ID: "+idstart+sniper.getHeroID() + "a Level: "+sniper.getLvl());
                         txt3.setText("HP: "+wholenum.format(sniper.baseHPwSTR())+" MP: "+wholenum.format(sniper.baseHPwSTR()));
                         txt4.setText("pAtk: "+decF.format(sniper.pAtkPts())+" pDef: "+decF.format(sniper.pDefPts())+
                                 "\nmAtk: "+decF.format(sniper.mAtkPts())+" mDef: "+decF.format(sniper.mDefPts()));

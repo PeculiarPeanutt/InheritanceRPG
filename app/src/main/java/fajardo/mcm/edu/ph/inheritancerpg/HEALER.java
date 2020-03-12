@@ -73,7 +73,7 @@ public class HEALER extends AppCompatActivity {
 
                     //layout display
                     txt.setText(highPriest.getHeroClass());
-                    txt2.setText("ID: "+idstart+highPriest.getHeroID() + " Level: "+highPriest.getLvl());
+                    txt2.setText("ID: "+idstart+highPriest.getHeroID() + "a Level: "+highPriest.getLvl());
                     txt3.setText("HP: "+wholenum.format(highPriest.baseHPwSTR())+" MP: "+wholenum.format(highPriest.baseHPwINT()));
                     txt4.setText("pAtk: "+decF.format(highPriest.pAtkPts())+" pDef: "+decF.format(highPriest.pDefPts())+
                             "\nmAtk: "+decF.format(highPriest.mAtkPts())+" mDef: "+decF.format(highPriest.mDefPts()));
@@ -93,7 +93,7 @@ public class HEALER extends AppCompatActivity {
 
                     //layout display
                     txt.setText(battlePriest.getHeroClass());
-                    txt2.setText("ID: "+idstart+battlePriest.getHeroID() + " Level: "+battlePriest.getLvl());
+                    txt2.setText("ID: "+idstart+battlePriest.getHeroID() + "b Level: "+battlePriest.getLvl());
                     txt3.setText("HP: "+wholenum.format(battlePriest.baseHPwSTR())+" MP: "+wholenum.format(battlePriest.baseHPwSTR()));
                     txt4.setText("pAtk: "+decF.format(battlePriest.pAtkPts())+" pDef: "+decF.format(battlePriest.pDefPts())+
                             "\nmAtk: "+decF.format(battlePriest.mAtkPts())+" mDef: "+decF.format(battlePriest.mDefPts()));
@@ -131,7 +131,7 @@ public class HEALER extends AppCompatActivity {
 
 
                         txt.setText(battlePriest.getHeroClass());
-                        txt2.setText("ID: "+idstart+battlePriest.getHeroID() + " Level: "+battlePriest.getLvl());
+                        txt2.setText("ID: "+idstart+battlePriest.getHeroID() + "b Level: "+battlePriest.getLvl());
                         txt3.setText("HP: "+wholenum.format(battlePriest.baseHPwSTR())+" MP: "+wholenum.format(battlePriest.baseHPwSTR()));
                         txt4.setText("pAtk: "+decF.format(battlePriest.pAtkPts())+" pDef: "+decF.format(battlePriest.pDefPts())+
                                 "\nmAtk: "+decF.format(battlePriest.mAtkPts())+" mDef: "+decF.format(battlePriest.mDefPts()));
@@ -160,7 +160,7 @@ public class HEALER extends AppCompatActivity {
 
 
                         txt.setText(highPriest.getHeroClass());
-                        txt2.setText("ID: "+idstart+highPriest.getHeroID() + " Level: "+highPriest.getLvl());
+                        txt2.setText("ID: "+idstart+highPriest.getHeroID() + "a Level: "+highPriest.getLvl());
                         txt3.setText("HP: "+wholenum.format(highPriest.baseHPwSTR())+" MP: "+wholenum.format(highPriest.baseHPwINT()));
                         txt4.setText("pAtk: "+decF.format(highPriest.pAtkPts())+" pDef: "+decF.format(highPriest.pDefPts())+
                                 "\nmAtk: "+decF.format(highPriest.mAtkPts())+" mDef: "+decF.format(highPriest.mDefPts()));

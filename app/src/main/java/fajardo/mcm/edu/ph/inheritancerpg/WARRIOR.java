@@ -73,7 +73,7 @@ public class WARRIOR extends AppCompatActivity {
 
                     //layout display
                     txt.setText(valkyrie.getHeroClass());
-                    txt2.setText("ID: "+idstart+valkyrie.getHeroID() + " Level: "+valkyrie.getLvl());
+                    txt2.setText("ID: "+idstart+valkyrie.getHeroID() + "a Level: "+valkyrie.getLvl());
                     txt3.setText("HP: "+wholenum.format(valkyrie.baseHPwSTR())+" MP: "+wholenum.format(valkyrie.baseHPwSTR()));
                     txt4.setText("pAtk: "+decF.format(valkyrie.pAtkPts())+" pDef: "+decF.format(valkyrie.pDefPts())+
                             "\nmAtk: "+decF.format(valkyrie.mAtkPts())+" mDef: "+decF.format(valkyrie.mDefPts()));
@@ -93,7 +93,7 @@ public class WARRIOR extends AppCompatActivity {
 
                     //layout display
                     txt.setText(shieldMaiden.getHeroClass());
-                    txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + " Level: "+shieldMaiden.getLvl());
+                    txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + "b Level: "+shieldMaiden.getLvl());
                     txt3.setText("HP: "+wholenum.format(shieldMaiden.baseHPwSTR())+" MP: "+wholenum.format(shieldMaiden.baseHPwSTR()));
                     txt4.setText("pAtk: "+decF.format(shieldMaiden.pAtkPts())+" pDef: "+decF.format(shieldMaiden.pDefPts())+
                             "\nmAtk: "+decF.format(shieldMaiden.mAtkPts())+" mDef: "+decF.format(shieldMaiden.mDefPts()));
@@ -131,7 +131,7 @@ public class WARRIOR extends AppCompatActivity {
 
 
                         txt.setText(shieldMaiden.getHeroClass());
-                        txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + " Level: "+shieldMaiden.getLvl());
+                        txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + "b Level: "+shieldMaiden.getLvl());
                         txt3.setText("HP: "+wholenum.format(shieldMaiden.baseHPwSTR())+" MP: "+wholenum.format(shieldMaiden.baseHPwSTR()));
                         txt4.setText("pAtk: "+decF.format(shieldMaiden.pAtkPts())+" pDef: "+shieldMaiden.pDefPts()+
                                 "\nmAtk: "+shieldMaiden.mAtkPts()+" mDef: "+shieldMaiden.mDefPts());
@@ -160,7 +160,7 @@ public class WARRIOR extends AppCompatActivity {
 
 
                         txt.setText(valkyrie.getHeroClass());
-                        txt2.setText("ID: "+idstart+valkyrie.getHeroID() + " Level: "+valkyrie.getLvl());
+                        txt2.setText("ID: "+idstart+valkyrie.getHeroID() + "a Level: "+valkyrie.getLvl());
                         txt3.setText("HP: "+wholenum.format(valkyrie.baseHPwSTR())+" MP: "+wholenum.format(valkyrie.baseHPwSTR()));
                         txt4.setText("pAtk: "+decF.format(valkyrie.pAtkPts())+" pDef: "+valkyrie.pDefPts()+
                                 "\nmAtk: "+valkyrie.mAtkPts()+" mDef: "+valkyrie.mDefPts());

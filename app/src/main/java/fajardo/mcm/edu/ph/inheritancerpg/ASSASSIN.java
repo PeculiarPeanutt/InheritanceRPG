@@ -73,7 +73,7 @@ public class ASSASSIN extends AppCompatActivity {
 
                     //layout display
                     txt.setText(usaginobi.getHeroClass());
-                    txt2.setText("ID: "+idstart+usaginobi.getHeroID() + " Level: "+usaginobi.getLvl());
+                    txt2.setText("ID: "+idstart+usaginobi.getHeroID() + "b Level: "+usaginobi.getLvl());
                     txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
                     txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
                             "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
@@ -93,7 +93,7 @@ public class ASSASSIN extends AppCompatActivity {
 
                     //layout display
                     txt.setText(asura.getHeroClass());
-                    txt2.setText("ID: "+idstart+asura.getHeroID() + " Level: "+asura.getLvl());
+                    txt2.setText("ID: "+idstart+asura.getHeroID() + "a Level: "+asura.getLvl());
                     txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
                     txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
                             "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
@@ -131,7 +131,7 @@ public class ASSASSIN extends AppCompatActivity {
 
 
                         txt.setText(asura.getHeroClass());
-                        txt2.setText("ID: "+idstart+asura.getHeroID() + " Level: "+asura.getLvl());
+                        txt2.setText("ID: "+idstart+asura.getHeroID() + "a Level: "+asura.getLvl());
                         txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
                         txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
                                 "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
@@ -160,7 +160,7 @@ public class ASSASSIN extends AppCompatActivity {
 
 
                         txt.setText(usaginobi.getHeroClass());
-                        txt2.setText("ID: "+idstart+usaginobi.getHeroID() + " Level: "+usaginobi.getLvl());
+                        txt2.setText("ID: "+idstart+usaginobi.getHeroID() + "b Level: "+usaginobi.getLvl());
                         txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
                         txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
                                 "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
