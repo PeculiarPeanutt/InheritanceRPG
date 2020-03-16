@@ -108,6 +108,7 @@ public class DRAGONOID extends AppCompatActivity {
                     txt4a.setText("STR: "+wholenum.format(elementalDracomancer.strWithGrowth())+" INT: "+wholenum.format(elementalDracomancer.intWithGrowth())+
                             " AGI: "+wholenum.format(elementalDracomancer.agiWithGrowth()));
                     info.setText("Nananananaanana \nNot Batman!!!\nbut Dragon hybrid thing man!");
+                    txt.setTextSize(10);
               
 
                 }
