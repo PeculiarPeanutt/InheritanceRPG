@@ -2,6 +2,7 @@ package fajardo.mcm.edu.ph.inheritancerpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,38 +17,40 @@ import java.text.DecimalFormat;
 
 public class HEALER extends AppCompatActivity {
 
-    TextView txt, txt2, txt3, txt4, txt5 , txt4a, txt5a;
-    ImageView monpic1, monpic2;
+    TextView txt, txt2, txt3, txt3a, txt4, txt5 , txt4a, txt5a, info;
+    ImageView monpic1, BattlePriestImg;
     Spinner spinner;
     String spin ;
     EditText editAdd;
     Button btn, btn2;
-    DecimalFormat decF = new DecimalFormat("#.##");
+    DecimalFormat decF = new DecimalFormat("#%");
     DecimalFormat wholenum = new DecimalFormat("#");
-    int idstart = 20200311;
+    int idstart = 202000;
 
 
     BattlePriest battlePriest  =  new BattlePriest(3,200,100,20,60,15,35,"Battle Priest",3,
             1,0,20,30,50,0.80,0.25,0.25,0.05);
 
-    HighPriest highPriest =  new HighPriest(3,200,100,20,60,15,35,"High Priest",3,
+    HighPriest highPriest =  new HighPriest(4,200,100,20,60,15,35,"High Priest",3,
             1,0,20,30,50,0.80,0.25,0.25,0.05);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assassin);
+        setContentView(R.layout.activity_healer);
 
-        txt = findViewById(R.id.txt1);
+        txt = findViewById(R.id.textView);
         txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
+        txt3 = findViewById(R.id.textView3);
+        txt3a= findViewById(R.id.textView4);
         txt4 = findViewById(R.id.txt4);
         txt5 = findViewById(R.id.txt5);
         txt4a = findViewById(R.id.txt4a);
         txt5a = findViewById(R.id.txt5a);
-        monpic1 = findViewById(R.id.imageView1);
-        monpic2 = findViewById(R.id.imageView2);
+        info=findViewById(R.id.textViewInfo);
+        monpic1 = findViewById(R.id.imageView26);
+        BattlePriestImg = findViewById(R.id.imageView23);
         spinner = findViewById(R.id.spinner);
         editAdd = findViewById(R.id.editAdd);
         btn = findViewById(R.id.btn);
@@ -67,19 +70,21 @@ public class HEALER extends AppCompatActivity {
 
                     //pictures
                     monpic1.setVisibility(View.VISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
+                    BattlePriestImg.setVisibility(View.INVISIBLE);
 
                     highPriest.setLvl(40);
 
                     //layout display
                     txt.setText(highPriest.getHeroClass());
-                    txt2.setText("ID: "+idstart+highPriest.getHeroID() + "a Level: "+highPriest.getLvl());
-                    txt3.setText("HP: "+wholenum.format(highPriest.baseHPwSTR())+" MP: "+wholenum.format(highPriest.baseHPwINT()));
-                    txt4.setText("pAtk: "+decF.format(highPriest.pAtkPts())+" pDef: "+decF.format(highPriest.pDefPts())+
-                            "\nmAtk: "+decF.format(highPriest.mAtkPts())+" mDef: "+decF.format(highPriest.mDefPts()));
+                    txt2.setText("ID: "+idstart+highPriest.getHeroID());
+                    txt5a.setText(""+highPriest.getLvl());
+                    txt3.setText(""+wholenum.format(highPriest.baseHPwSTR())+"/"+wholenum.format(highPriest.baseHPwINT()));
+                    txt3a.setText(""+wholenum.format(highPriest.baseHPwSTR())+"/"+wholenum.format(highPriest.baseHPwINT()));
+                    txt4.setText("Physical Atk: "+wholenum.format(highPriest.pAtkPts())+" \nPhysical Def: "+wholenum.format(highPriest.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(highPriest.mAtkPts())+" \nMagic Def: "+wholenum.format(highPriest.mDefPts())+"\nEvasion Rate: "+decF.format(highPriest.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(highPriest.strWithGrowth())+" INT: "+wholenum.format(highPriest.intWithGrowth())+
                             " AGI: "+wholenum.format(highPriest.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(highPriest.evasionPts()));
+                    info.setText("You get a heal!\nand You get a Heal!\nAND YOU GET A HEAL!!!");
 
                 }
 
@@ -87,19 +92,21 @@ public class HEALER extends AppCompatActivity {
 
                     //pictures
                     monpic1.setVisibility(View.INVISIBLE);
-                    monpic2.setVisibility(View.VISIBLE);
+                    BattlePriestImg.setVisibility(View.VISIBLE);
 
                     battlePriest.setLvl(40);
 
                     //layout display
                     txt.setText(battlePriest.getHeroClass());
-                    txt2.setText("ID: "+idstart+battlePriest.getHeroID() + "b Level: "+battlePriest.getLvl());
-                    txt3.setText("HP: "+wholenum.format(battlePriest.baseHPwSTR())+" MP: "+wholenum.format(battlePriest.baseHPwSTR()));
-                    txt4.setText("pAtk: "+decF.format(battlePriest.pAtkPts())+" pDef: "+decF.format(battlePriest.pDefPts())+
-                            "\nmAtk: "+decF.format(battlePriest.mAtkPts())+" mDef: "+decF.format(battlePriest.mDefPts()));
+                    txt2.setText("ID: "+idstart+battlePriest.getHeroID());
+                    txt5a.setText(""+battlePriest.getLvl());
+                    txt3.setText(""+wholenum.format(battlePriest.baseHPwSTR())+"/"+wholenum.format(battlePriest.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(battlePriest.baseHPwSTR())+"/"+wholenum.format(battlePriest.baseHPwSTR()));
+                    txt4.setText("Physical Atk: "+wholenum.format(battlePriest.pAtkPts())+" \nPhysical Def: "+wholenum.format(battlePriest.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(battlePriest.mAtkPts())+" \nMagic Def: "+wholenum.format(battlePriest.mDefPts())+"\nEvasion Rate: "+decF.format(battlePriest.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(battlePriest.strWithGrowth())+" INT: "+wholenum.format(battlePriest.intWithGrowth())+
                             " AGI: "+wholenum.format(battlePriest.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(battlePriest.evasionPts()));
+                    info.setText("Pretty much has the power of \nGod and Anime on their side ");
 
                 }
 
@@ -111,9 +118,6 @@ public class HEALER extends AppCompatActivity {
 
             }
         });
-
-
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,16 +135,16 @@ public class HEALER extends AppCompatActivity {
 
 
                         txt.setText(battlePriest.getHeroClass());
-                        txt2.setText("ID: "+idstart+battlePriest.getHeroID() + "b Level: "+battlePriest.getLvl());
-                        txt3.setText("HP: "+wholenum.format(battlePriest.baseHPwSTR())+" MP: "+wholenum.format(battlePriest.baseHPwSTR()));
-                        txt4.setText("pAtk: "+decF.format(battlePriest.pAtkPts())+" pDef: "+decF.format(battlePriest.pDefPts())+
-                                "\nmAtk: "+decF.format(battlePriest.mAtkPts())+" mDef: "+decF.format(battlePriest.mDefPts()));
+                        txt2.setText("ID: "+idstart+battlePriest.getHeroID());
+                        txt5a.setText(""+battlePriest.getLvl());
+                        txt3.setText(""+wholenum.format(battlePriest.baseHPwSTR())+"/"+wholenum.format(battlePriest.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(battlePriest.baseHPwSTR())+"/"+wholenum.format(battlePriest.baseHPwSTR()));
+                        txt4.setText("Physical Atk: "+wholenum.format(battlePriest.pAtkPts())+" \nPhysical Def: "+wholenum.format(battlePriest.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(battlePriest.mAtkPts())+" \nMagic Def: "+wholenum.format(battlePriest.mDefPts())+"\nEvasion Rate: "+decF.format(battlePriest.evasionPts()));
                         txt4a.setText("STR: "+wholenum.format(battlePriest.strWithGrowth())+" INT: "+wholenum.format(battlePriest.intWithGrowth())+
                                 " AGI: "+wholenum.format(battlePriest.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(battlePriest.evasionPts()));
 
                     }
-
 
                     else {
                         Toast.makeText(HEALER.this,
@@ -160,15 +164,15 @@ public class HEALER extends AppCompatActivity {
 
 
                         txt.setText(highPriest.getHeroClass());
-                        txt2.setText("ID: "+idstart+highPriest.getHeroID() + "a Level: "+highPriest.getLvl());
-                        txt3.setText("HP: "+wholenum.format(highPriest.baseHPwSTR())+" MP: "+wholenum.format(highPriest.baseHPwINT()));
-                        txt4.setText("pAtk: "+decF.format(highPriest.pAtkPts())+" pDef: "+decF.format(highPriest.pDefPts())+
-                                "\nmAtk: "+decF.format(highPriest.mAtkPts())+" mDef: "+decF.format(highPriest.mDefPts()));
+                        txt2.setText("ID: "+idstart+highPriest.getHeroID());
+                        txt5a.setText( ""+highPriest.getLvl());
+                        txt3.setText(""+wholenum.format(highPriest.baseHPwSTR())+"/"+wholenum.format(highPriest.baseHPwINT()));
+                        txt3a.setText(""+wholenum.format(highPriest.baseHPwSTR())+"/"+wholenum.format(highPriest.baseHPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(highPriest.pAtkPts())+" \nPhysical Def: "+wholenum.format(highPriest.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(highPriest.mAtkPts())+" \nMagic Def: "+wholenum.format(highPriest.mDefPts())+"\nEvasion Rate: "+decF.format(highPriest.evasionPts()));
                         txt4a.setText("STR: "+wholenum.format(highPriest.strWithGrowth())+" INT: "+wholenum.format(highPriest.intWithGrowth())+
                                 " AGI: "+wholenum.format(highPriest.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(highPriest.evasionPts()));
                     }
-
 
                     else {
                         Toast.makeText(HEALER.this,
@@ -176,14 +180,16 @@ public class HEALER extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 }
-
-
-
-
             }
         });
 
-
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HEALER.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

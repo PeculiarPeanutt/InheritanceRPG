@@ -7,25 +7,58 @@
     tools:context=".firstAct">
 
     <Button
-        android:id="@+id/herobtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1in"
-        android:text="Hero"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/mnsbtn"
+        android:layout_width="157dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="420dp"
+        android:text="Monster"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toEndOf="@+id/herobtn"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/mnsbtn"
+        android:id="@+id/herobtn"
+        android:layout_width="157dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="420dp"
+        android:text="Hero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="196dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hero_figure" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/monster_figure" />
+
+    <TextView
+        android:id="@+id/HERO-MON"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Monster"
-        app:layout_constraintTop_toTopOf="@id/herobtn"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="56dp"
+        android:text="HERO-MON"
+        android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

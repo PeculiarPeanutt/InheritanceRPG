@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InheritanceRPG</string>
+    <string name="app_name">HERO-MON</string>
     <string-array name="Heroes">
         <item>Rabbit Assassin</item>
         <item>Warrior</item>

@@ -2,6 +2,7 @@ package fajardo.mcm.edu.ph.inheritancerpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,15 +17,15 @@ import java.text.DecimalFormat;
 
 public class WARRIOR extends AppCompatActivity {
 
-    TextView txt, txt2, txt3, txt4, txt5 , txt4a, txt5a;
+    TextView txt, txt2,txt3, txt3a, txt4, txt5 , txt4a, txt5a, info;
     ImageView monpic1, monpic2;
     Spinner spinner;
     String spin ;
     EditText editAdd;
     Button btn, btn2;
-    DecimalFormat decF = new DecimalFormat("#.##");
+    DecimalFormat decF = new DecimalFormat("#%");
     DecimalFormat wholenum = new DecimalFormat("#");
-    int idstart = 20200311;
+    int idstart = 202000;
 
 
     Valkyrie valkyrie =  new Valkyrie (2,200,100,60,10,30,20,"Valkyrie",2,
@@ -39,21 +40,21 @@ public class WARRIOR extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warrior);
 
-        txt = findViewById(R.id.txt1);
+        txt = findViewById(R.id.textView);
         txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
+        txt3 = findViewById(R.id.textView3);
+        txt3a= findViewById(R.id.textView4);
         txt4 = findViewById(R.id.txt4);
         txt5 = findViewById(R.id.txt5);
         txt4a = findViewById(R.id.txt4a);
         txt5a = findViewById(R.id.txt5a);
-        monpic1 = findViewById(R.id.imageView1);
-        monpic2 = findViewById(R.id.imageView2);
+        info=findViewById(R.id.textViewInfo);
+        monpic1 = findViewById(R.id.imageView2);
+        monpic2 = findViewById(R.id.imageView32);
         spinner = findViewById(R.id.spinner);
         editAdd = findViewById(R.id.editAdd);
         btn = findViewById(R.id.btn);
         btn2 = findViewById(R.id.btn2);
-
-
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -73,13 +74,15 @@ public class WARRIOR extends AppCompatActivity {
 
                     //layout display
                     txt.setText(valkyrie.getHeroClass());
-                    txt2.setText("ID: "+idstart+valkyrie.getHeroID() + "a Level: "+valkyrie.getLvl());
-                    txt3.setText("HP: "+wholenum.format(valkyrie.baseHPwSTR())+" MP: "+wholenum.format(valkyrie.baseHPwSTR()));
-                    txt4.setText("pAtk: "+decF.format(valkyrie.pAtkPts())+" pDef: "+decF.format(valkyrie.pDefPts())+
-                            "\nmAtk: "+decF.format(valkyrie.mAtkPts())+" mDef: "+decF.format(valkyrie.mDefPts()));
+                    txt2.setText("ID: "+idstart+valkyrie.getHeroID());
+                    txt5a.setText(""+valkyrie.getLvl());
+                    txt3.setText(""+wholenum.format(+valkyrie.baseHPwSTR())+"/"+wholenum.format(valkyrie.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(valkyrie.baseHPwSTR())+"/"+wholenum.format(valkyrie.baseHPwSTR()));
+                    txt4.setText("Physical Atk: "+wholenum.format(valkyrie.pAtkPts())+" \nPhysical Def: "+wholenum.format(valkyrie.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(valkyrie.mAtkPts())+" \nMagic Def: "+wholenum.format(valkyrie.mDefPts())+"\nEvasion Rate: "+decF.format(valkyrie.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(valkyrie.strWithGrowth())+" INT: "+wholenum.format(valkyrie.intWithGrowth())+
                             " AGI: "+wholenum.format(valkyrie.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(valkyrie.evasionPts()));
+                    info.setText("Is it a bird??\nIs it a plane??\nIt's not superman.");
 
                 }
 
@@ -93,13 +96,15 @@ public class WARRIOR extends AppCompatActivity {
 
                     //layout display
                     txt.setText(shieldMaiden.getHeroClass());
-                    txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + "b Level: "+shieldMaiden.getLvl());
-                    txt3.setText("HP: "+wholenum.format(shieldMaiden.baseHPwSTR())+" MP: "+wholenum.format(shieldMaiden.baseHPwSTR()));
-                    txt4.setText("pAtk: "+decF.format(shieldMaiden.pAtkPts())+" pDef: "+decF.format(shieldMaiden.pDefPts())+
-                            "\nmAtk: "+decF.format(shieldMaiden.mAtkPts())+" mDef: "+decF.format(shieldMaiden.mDefPts()));
+                    txt2.setText("ID: "+idstart+shieldMaiden.getHeroID());
+                    txt5a.setText(""+shieldMaiden.getLvl());
+                    txt3.setText(""+wholenum.format(shieldMaiden.baseHPwSTR())+"/"+wholenum.format(shieldMaiden.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(shieldMaiden.baseHPwSTR())+wholenum.format(shieldMaiden.baseHPwSTR()));
+                    txt4.setText("Physical Atk: "+wholenum.format(shieldMaiden.pAtkPts())+" \nPhysical Def: "+wholenum.format(shieldMaiden.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(shieldMaiden.mAtkPts())+" \nMagic Def: "+wholenum.format(shieldMaiden.mDefPts())+"\nEvasion Rate: "+decF.format(shieldMaiden.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(shieldMaiden.strWithGrowth())+" INT: "+wholenum.format(shieldMaiden.intWithGrowth())+
                             " AGI: "+wholenum.format(shieldMaiden.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(shieldMaiden.evasionPts()));
+                    info.setText("CAN shield you away from your problems");
 
                 }
 
@@ -131,13 +136,14 @@ public class WARRIOR extends AppCompatActivity {
 
 
                         txt.setText(shieldMaiden.getHeroClass());
-                        txt2.setText("ID: "+idstart+shieldMaiden.getHeroID() + "b Level: "+shieldMaiden.getLvl());
-                        txt3.setText("HP: "+wholenum.format(shieldMaiden.baseHPwSTR())+" MP: "+wholenum.format(shieldMaiden.baseHPwSTR()));
-                        txt4.setText("pAtk: "+decF.format(shieldMaiden.pAtkPts())+" pDef: "+shieldMaiden.pDefPts()+
-                                "\nmAtk: "+shieldMaiden.mAtkPts()+" mDef: "+shieldMaiden.mDefPts());
+                        txt2.setText("ID: "+idstart+shieldMaiden.getHeroID());
+                        txt5a.setText(""+shieldMaiden.getLvl());
+                        txt3.setText(""+wholenum.format(+shieldMaiden.baseHPwSTR())+"/"+wholenum.format(shieldMaiden.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(shieldMaiden.baseHPwSTR())+"/"+wholenum.format(shieldMaiden.baseHPwSTR()));
+                        txt4.setText("Physical Atk: "+wholenum.format(shieldMaiden.pAtkPts())+" \nPhysical Def: "+shieldMaiden.pDefPts()+
+                                "\nMagic Atk: "+shieldMaiden.mAtkPts()+" \nMagic Def: "+shieldMaiden.mDefPts()+"\nEvasion Rate: "+decF.format(shieldMaiden.evasionPts()));
                         txt4a.setText("STR: "+wholenum.format(shieldMaiden.strWithGrowth())+" INT: "+wholenum.format(shieldMaiden.intWithGrowth())+
                                 " AGI: "+wholenum.format(shieldMaiden.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(shieldMaiden.evasionPts()));
 
                     }
 
@@ -160,13 +166,15 @@ public class WARRIOR extends AppCompatActivity {
 
 
                         txt.setText(valkyrie.getHeroClass());
-                        txt2.setText("ID: "+idstart+valkyrie.getHeroID() + "a Level: "+valkyrie.getLvl());
-                        txt3.setText("HP: "+wholenum.format(valkyrie.baseHPwSTR())+" MP: "+wholenum.format(valkyrie.baseHPwSTR()));
-                        txt4.setText("pAtk: "+decF.format(valkyrie.pAtkPts())+" pDef: "+valkyrie.pDefPts()+
-                                "\nmAtk: "+valkyrie.mAtkPts()+" mDef: "+valkyrie.mDefPts());
+                        txt2.setText("ID: "+idstart+valkyrie.getHeroID());
+                        txt5a.setText(valkyrie.getLvl());
+                        txt3.setText(""+wholenum.format(+valkyrie.baseHPwSTR())+"/"+wholenum.format(valkyrie.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(valkyrie.baseHPwSTR())+"/"+wholenum.format(valkyrie.baseHPwSTR()));
+                        txt4.setText("Physical Atk: "+wholenum.format(valkyrie.pAtkPts())+" \nPhysical Def: "+valkyrie.pDefPts()+
+                                "\nMagic Atk: "+valkyrie.mAtkPts()+" \nMagic Def: "+valkyrie.mDefPts()+"\nEvasion Rate: "+decF.format(valkyrie.evasionPts()));
                         txt4a.setText("STR: "+wholenum.format(valkyrie.strWithGrowth())+" INT: "+wholenum.format(valkyrie.intWithGrowth())+
                                 " AGI: "+wholenum.format(valkyrie.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(valkyrie.evasionPts()));
+
                     }
 
 
@@ -176,10 +184,15 @@ public class WARRIOR extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 }
+            }
+        });
 
 
-
-
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(WARRIOR.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 

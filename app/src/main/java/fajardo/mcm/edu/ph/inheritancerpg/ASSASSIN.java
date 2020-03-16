@@ -2,6 +2,7 @@ package fajardo.mcm.edu.ph.inheritancerpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,15 +17,15 @@ import java.text.DecimalFormat;
 
 public class ASSASSIN extends AppCompatActivity {
 
-    TextView txt, txt2, txt3, txt4, txt5 , txt4a, txt5a;
+    TextView txt, txt2, txt3,txt3a, txt4, txt5 , txt4a, txt5a, info;
     ImageView monpic1, monpic2;
     Spinner spinner;
     String spin ;
     EditText editAdd;
     Button btn, btn2;
-    DecimalFormat decF = new DecimalFormat("#.##");
+    DecimalFormat decF = new DecimalFormat("#%");
     DecimalFormat wholenum = new DecimalFormat("#");
-    int idstart = 20200311;
+    int idstart = 202000;
     
     
     Asurabbit asura = new Asurabbit(1,200,100,50,25,35,15,"Asurabbit",1,
@@ -39,20 +40,21 @@ public class ASSASSIN extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assassin);
 
-        txt = findViewById(R.id.txt1);
+        txt = findViewById(R.id.textView);
         txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
+        txt3 = findViewById(R.id.textView3);
+        txt3a=findViewById(R.id.textView4);
         txt4 = findViewById(R.id.txt4);
         txt5 = findViewById(R.id.txt5);
         txt4a = findViewById(R.id.txt4a);
         txt5a = findViewById(R.id.txt5a);
-        monpic1 = findViewById(R.id.imageView1);
-        monpic2 = findViewById(R.id.imageView2);
+        info=findViewById(R.id.textViewInfo);
+        monpic1 = findViewById(R.id.imageView8);
+        monpic2 = findViewById(R.id.imageView14);
         spinner = findViewById(R.id.spinner);
         editAdd = findViewById(R.id.editAdd);
         btn = findViewById(R.id.btn);
         btn2 = findViewById(R.id.btn2);
-        
         
         
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -73,14 +75,15 @@ public class ASSASSIN extends AppCompatActivity {
 
                     //layout display
                     txt.setText(usaginobi.getHeroClass());
-                    txt2.setText("ID: "+idstart+usaginobi.getHeroID() + "b Level: "+usaginobi.getLvl());
-                    txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
-                    txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
-                            "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
-                    txt4a.setText("STR: "+wholenum.format(usaginobi.strWithGrowth())+" INT: "+wholenum.format(usaginobi.intWithGrowth())+
-                            " AGI: "+wholenum.format(usaginobi.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(usaginobi.evasionPts()));
-                    
+                    txt5a.setText(""+usaginobi.getLvl());
+                    txt2.setText("ID: "+idstart+usaginobi.getHeroID());
+                    txt3.setText(wholenum.format(usaginobi.baseHPwSTR())+"/"+wholenum.format(usaginobi.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(usaginobi.baseMPwAGI())+"/"+wholenum.format(usaginobi.baseMPwAGI()));
+                    txt4.setText("Physical Atk: "+wholenum.format(usaginobi.pAtkPts())+"\nPhysical Def: "+wholenum.format(usaginobi.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(usaginobi.mAtkPts())+" Magic Def: "+wholenum.format(usaginobi.mDefPts())+"\nEvasion Rate: "+decF.format(usaginobi.evasionPts()));
+                    txt4a.setText("STR: "+wholenum.format(usaginobi.strWithGrowth())+" INT: "+wholenum.format(usaginobi.intWithGrowth())+ " AGI: "+wholenum.format(usaginobi.agiWithGrowth()));
+                    info.setText("Not here to become the hokage,\nbut here to probably kill the hokage");
+
                 }
 
                 if (spin.equals("Asurabbit")) {
@@ -93,13 +96,14 @@ public class ASSASSIN extends AppCompatActivity {
 
                     //layout display
                     txt.setText(asura.getHeroClass());
-                    txt2.setText("ID: "+idstart+asura.getHeroID() + "a Level: "+asura.getLvl());
-                    txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
-                    txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
-                            "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
-                    txt4a.setText("STR: "+wholenum.format(asura.strWithGrowth())+" INT: "+wholenum.format(asura.intWithGrowth())+
-                            " AGI: "+wholenum.format(asura.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(asura.evasionPts()));
+                    txt2.setText("ID: "+idstart+asura.getHeroID());
+                    txt3.setText(""+wholenum.format(asura.baseHPwSTR())+"/"+wholenum.format(asura.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(asura.baseMPwAGI())+"/"+wholenum.format(asura.baseMPwAGI()));
+                    txt4.setText("Physical Atk: "+wholenum.format(asura.pAtkPts())+" Physical Def: "+wholenum.format(asura.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(asura.mAtkPts())+" Magic Def: "+wholenum.format(asura.mDefPts())+("\nEvasion Rate: "+decF.format(asura.evasionPts())));
+                    txt4a.setText("STR: "+wholenum.format(asura.strWithGrowth())+" INT: "+wholenum.format(asura.intWithGrowth())+ " AGI: "+wholenum.format(asura.agiWithGrowth()));
+                    txt5a.setText(""+asura.getLvl());
+                    info.setText("Rabbit from the pits of hell!\nAlso has Sharinggan, probably.");
 
                 }
                 
@@ -131,10 +135,12 @@ public class ASSASSIN extends AppCompatActivity {
 
 
                         txt.setText(asura.getHeroClass());
-                        txt2.setText("ID: "+idstart+asura.getHeroID() + "a Level: "+asura.getLvl());
-                        txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR())+" MP: "+wholenum.format(asura.baseMPwAGI()));
-                        txt4.setText("pAtk: "+decF.format(asura.pAtkPts())+" pDef: "+decF.format(asura.pDefPts())+
-                                "\nmAtk: "+decF.format(asura.mAtkPts())+" mDef: "+decF.format(asura.mDefPts()));
+                        txt2.setText("ID: "+idstart+asura.getHeroID());
+                        txt5a.setText(""+asura.getLvl());
+                        txt3.setText("HP: "+wholenum.format(asura.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(asura.baseMPwAGI()));
+                        txt4.setText("Physical Atk: "+decF.format(asura.pAtkPts())+" Physical Def: "+decF.format(asura.pDefPts())+
+                                "\nMagic Atk: "+decF.format(asura.mAtkPts())+" Magic Def: "+decF.format(asura.mDefPts()));
                         txt4a.setText("STR: "+wholenum.format(asura.strWithGrowth())+" INT: "+wholenum.format(asura.intWithGrowth())+
                                 " AGI: "+wholenum.format(asura.agiWithGrowth()));
                         txt5.setText("Evasion Rate: "+decF.format(asura.evasionPts()));
@@ -160,13 +166,15 @@ public class ASSASSIN extends AppCompatActivity {
 
 
                         txt.setText(usaginobi.getHeroClass());
-                        txt2.setText("ID: "+idstart+usaginobi.getHeroID() + "b Level: "+usaginobi.getLvl());
-                        txt3.setText("HP: "+wholenum.format(usaginobi.baseHPwSTR())+" MP: "+wholenum.format(usaginobi.baseMPwAGI()));
-                        txt4.setText("pAtk: "+decF.format(usaginobi.pAtkPts())+" pDef: "+decF.format(usaginobi.pDefPts())+
-                                "\nmAtk: "+decF.format(usaginobi.mAtkPts())+" mDef: "+decF.format(usaginobi.mDefPts()));
+                        txt2.setText("ID: "+idstart+usaginobi.getHeroID());
+                        txt5a.setText(""+usaginobi.getLvl());
+                        txt3.setText(wholenum.format(usaginobi.baseHPwSTR())+"/"+wholenum.format(usaginobi.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(usaginobi.baseMPwAGI())+"/"+wholenum.format(usaginobi.baseMPwAGI()));
+                        txt4.setText("Physical Atk: "+wholenum.format(usaginobi.pAtkPts())+"\nPhysical Def: "+wholenum.format(usaginobi.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(usaginobi.mAtkPts())+"\nMagic Def: "+wholenum.format(usaginobi.mDefPts())+"\nEvasion Rate: "+decF.format(usaginobi.evasionPts()));
                         txt4a.setText("STR: "+wholenum.format(usaginobi.strWithGrowth())+" INT: "+wholenum.format(usaginobi.intWithGrowth())+
                                 " AGI: "+wholenum.format(usaginobi.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(usaginobi.evasionPts()));
+                        
                     }
 
 
@@ -179,7 +187,14 @@ public class ASSASSIN extends AppCompatActivity {
 
 
 
+            }
+        });
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ASSASSIN.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 

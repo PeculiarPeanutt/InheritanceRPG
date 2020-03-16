@@ -18,15 +18,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txt, txt2, txt3, txt4, txt5 , txt4a, txt5a;
-    ImageView monpic1, monpic2, monpic3, monpic4, monpic5;
+
+    TextView txtClass, txtNum, txt3,txt3a, txt4, txt5 , txt4a, txt5a, info;
+    ImageView assBunnyImg, priestImg, dragonoidImg, warriorImg, gunnerImg;
     Spinner spinner;
     String spin ;
     EditText editAdd;
     Button btn, btn2;
-    DecimalFormat decF = new DecimalFormat("#.##");
+    DecimalFormat decF = new DecimalFormat("#%");
     DecimalFormat wholenum = new DecimalFormat("#");
-    int idstart = 20200311;
+    int idstart = 202000;
 
     //hero
 
@@ -51,19 +52,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        txt = findViewById(R.id.txt1);
-        txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
+        txtClass=findViewById(R.id.textView);
+        txtNum = findViewById(R.id.txt2);
+        txt3 = findViewById(R.id.textView3);
+        txt3a = findViewById(R.id.textView4);
         txt4 = findViewById(R.id.txt4);
         txt5 = findViewById(R.id.txt5);
         txt4a = findViewById(R.id.txt4a);
         txt5a = findViewById(R.id.txt5a);
-        monpic1 = findViewById(R.id.imageView1);
-        monpic2 = findViewById(R.id.imageView2);
-        monpic3 = findViewById(R.id.imageView3);
-        monpic4 = findViewById(R.id.imageView4);
-        monpic5 = findViewById(R.id.imageView5);
+        info= findViewById(R.id.textViewInfo);
+        assBunnyImg = findViewById(R.id.abunny);
+        priestImg = findViewById(R.id.priestImg);
+        gunnerImg = findViewById(R.id.gunnerImg);
+        dragonoidImg=findViewById(R.id.dragonoidImg);
+        warriorImg=findViewById(R.id.warriorImg);
         spinner = findViewById(R.id.spinner);
         editAdd = findViewById(R.id.editAdd);
         btn = findViewById(R.id.btn);
@@ -81,101 +83,101 @@ public class MainActivity extends AppCompatActivity {
 
 
                     //pictures
-                    monpic1.setVisibility(View.VISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
-                    monpic3.setVisibility(View.INVISIBLE);
-                    monpic4.setVisibility(View.INVISIBLE);
-                    monpic5.setVisibility(View.INVISIBLE);
+                    assBunnyImg.setVisibility(View.VISIBLE);
+                    warriorImg.setVisibility(View.INVISIBLE);
+                    priestImg.setVisibility(View.INVISIBLE);
+                    dragonoidImg.setVisibility(View.INVISIBLE);
+                    gunnerImg.setVisibility(View.INVISIBLE);
 
                     //layout display
-                    txt.setText(assassin.getHeroClass());
-                    txt2.setText("ID: "+idstart+assassin.getHeroID() + " Level: "+assassin.getLvl());
-                    txt3.setText("HP: "+wholenum.format(assassin.getBaseHP())+" MP: "+wholenum.format(assassin.getBaseMP()));
-                    txt4.setText("pAtk: "+decF.format(assassin.getpAtk())+" pDef: "+assassin.getpDef()+
-                            "\nmAtk: "+assassin.getmAtk()+" mDef: "+assassin.getmDef());
+                    txtClass.setText(assassin.getHeroClass());
+                    txtNum.setText("ID: "+idstart+assassin.getHeroID());
+                    txt3.setText(""+wholenum.format(assassin.getBaseHP())+"/"+wholenum.format(assassin.getBaseHP()));
+                    txt3a.setText(""+wholenum.format(assassin.getBaseMP())+"/"+wholenum.format(assassin.getBaseMP()));
+                    txt4.setText("Physical Atk: "+wholenum.format(assassin.getpAtk())+"\nPhysical Def: "+wholenum.format(assassin.getpDef())+
+                            "\nMagic Atk: "+wholenum.format(assassin.getmAtk())+"\nMagic Def: "+wholenum.format(assassin.getmDef())+"\nEvasion Rate: "+decF.format(assassin.getEvasion()));
                     txt4a.setText("STR: "+wholenum.format(assassin.getBaseSTR())+" INT: "+wholenum.format(assassin.getBaseINT())+" AGI: "+wholenum.format(assassin.getBaseAGI()));
-                    txt5.setText("Evasion Rate: "+decF.format(assassin.getEvasion()));
+                    txt5a.setText(""+assassin.getLvl());
+                    info.setText("The rabbit assassin class, ready to steal all your carrots not only silently but also deadily");
                 }
 
                 else if (spin.equals("Warrior")) {
 
+                    assBunnyImg.setVisibility(View.INVISIBLE);
+                    warriorImg.setVisibility(View.VISIBLE);
+                    priestImg.setVisibility(View.INVISIBLE);
+                    dragonoidImg.setVisibility(View.INVISIBLE);
+                    gunnerImg.setVisibility(View.INVISIBLE);
 
-                    monpic1.setVisibility(View.INVISIBLE);
-                    monpic2.setVisibility(View.VISIBLE);
-                    monpic3.setVisibility(View.INVISIBLE);
-                    monpic4.setVisibility(View.INVISIBLE);
-                    monpic5.setVisibility(View.INVISIBLE);
-
-                    txt.setText(warrior.getHeroClass());
-                    txt2.setText("ID: "+idstart+warrior.getHeroID() + " Level: "+warrior.getLvl());
-                    txt3.setText("HP: "+wholenum.format(warrior.getBaseHP())+" MP: "+wholenum.format(warrior.getBaseMP()));
-                    txt4.setText("pAtk: "+decF.format(warrior.getpAtk())+" pDef: "+warrior.getpDef()+
-                            "\nmAtk: "+warrior.getmAtk()+" mDef: "+warrior.getmDef());
+                    txtClass.setText(warrior.getHeroClass());
+                    txtNum.setText("ID: "+idstart+warrior.getHeroID());
+                    txt3.setText(""+wholenum.format(warrior.getBaseHP())+"/"+wholenum.format(warrior.getBaseHP()));
+                    txt3a.setText(""+wholenum.format(warrior.getBaseMP())+"/"+wholenum.format(warrior.getBaseMP()));
+                    txt4.setText("Physical Atk: "+wholenum.format(warrior.getpAtk())+"\nPhysical Def: "+wholenum.format(warrior.getpDef())+
+                            "\nMagic Atk: "+wholenum.format(warrior.getmAtk())+"\nMagic Def: "+wholenum.format(warrior.getmDef())+"\nEvasion Rate: "+decF.format(warrior.getEvasion()));
                     txt4a.setText("STR: "+wholenum.format(warrior.getBaseSTR())+" INT: "+wholenum.format(warrior.getBaseINT())+" AGI: "+wholenum.format(warrior.getBaseAGI()));
-                    txt5.setText("Evasion Rate: "+decF.format(warrior.getEvasion()));
-
+                    txt5a.setText(""+warrior.getLvl());
+                    info.setText("Warrior class!\nEpic waifu with epic pet butterfly!");
 
                 }
 
                 else if (spin.equals("Healer")) {
 
+                    assBunnyImg.setVisibility(View.INVISIBLE);
+                    warriorImg.setVisibility(View.INVISIBLE);
+                    priestImg.setVisibility(View.VISIBLE);
+                    dragonoidImg.setVisibility(View.INVISIBLE);
+                    gunnerImg.setVisibility(View.INVISIBLE);
 
-
-
-                    monpic1.setVisibility(View.INVISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
-                    monpic3.setVisibility(View.VISIBLE);
-                    monpic4.setVisibility(View.INVISIBLE);
-                    monpic5.setVisibility(View.INVISIBLE);
-
-                    txt.setText(healer.getHeroClass());
-                    txt2.setText("ID: "+idstart+healer.getHeroID() + " Level: "+healer.getLvl());
-                    txt3.setText("HP: "+wholenum.format(healer.getBaseHP())+" MP: "+wholenum.format(healer.getBaseMP()));
-                    txt4.setText("pAtk: "+decF.format(healer.getpAtk())+" pDef: "+healer.getpDef()+
-                            "\nmAtk: "+healer.getmAtk()+" mDef: "+healer.getmDef());
+                    txtClass.setText(healer.getHeroClass());
+                    txtNum.setText("ID: "+idstart+healer.getHeroID());
+                    txt3.setText(""+wholenum.format(healer.getBaseHP())+"/"+wholenum.format(healer.getBaseHP()));
+                    txt3a.setText(""+wholenum.format(healer.getBaseMP())+"/"+wholenum.format(healer.getBaseMP()));
+                    txt4.setText("Physical Atk: "+wholenum.format(healer.getpAtk())+"\nPhysical Def: "+wholenum.format(healer.getpDef())+
+                            "\nMagic Atk: "+wholenum.format(healer.getmAtk())+"\nMagic Def: "+wholenum.format(healer.getmDef())+"\nEvasion Rate: "+decF.format(healer.getEvasion()));
                     txt4a.setText("STR: "+wholenum.format(healer.getBaseSTR())+" INT: "+wholenum.format(healer.getBaseINT())+" AGI: "+wholenum.format(healer.getBaseAGI()));
-                    txt5.setText("Evasion Rate: "+decF.format(healer.getEvasion()));
+                    txt5a.setText(""+healer.getLvl());
+                    info.setText("Skidaddle Skidoodle.\nYour hp is now recovered.");
                 }
 
                 else if (spin.equals("Dragonoid")){
 
+                    assBunnyImg.setVisibility(View.INVISIBLE);
+                    warriorImg.setVisibility(View.INVISIBLE);
+                    priestImg.setVisibility(View.INVISIBLE);
+                    dragonoidImg.setVisibility(View.VISIBLE);
+                    gunnerImg.setVisibility(View.INVISIBLE);
 
 
-
-                    monpic1.setVisibility(View.INVISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
-                    monpic3.setVisibility(View.INVISIBLE);
-                    monpic4.setVisibility(View.VISIBLE);
-                    monpic5.setVisibility(View.INVISIBLE);
-
-
-                    txt.setText(dragonoid.getHeroClass());
-                    txt2.setText("ID: "+idstart+dragonoid.getHeroID() + " Level: "+dragonoid.getLvl());
-                    txt3.setText("HP: "+wholenum.format(dragonoid.getBaseHP())+" MP: "+wholenum.format(dragonoid.getBaseMP()));
-                    txt4.setText("pAtk: "+decF.format(dragonoid.getpAtk())+" pDef: "+dragonoid.getpDef()+
-                            "\nmAtk: "+dragonoid.getmAtk()+" mDef: "+dragonoid.getmDef());
+                    txtClass.setText(dragonoid.getHeroClass());
+                    txtNum.setText("ID: "+idstart+dragonoid.getHeroID());
+                    txt3.setText(""+wholenum.format(dragonoid.getBaseHP())+"/"+wholenum.format(dragonoid.getBaseHP()));
+                    txt3a.setText(""+wholenum.format(dragonoid.getBaseMP())+"/"+wholenum.format(dragonoid.getBaseMP()));
+                    txt4.setText("Physical Atk: "+wholenum.format(dragonoid.getpAtk())+"\nPhysical Def: "+wholenum.format(dragonoid.getpDef())+
+                            "\nMagic Atk: "+wholenum.format(dragonoid.getmAtk())+"\nMagic Def: "+wholenum.format(dragonoid.getmDef())+"\nEvasion Rate: "+decF.format(dragonoid.getEvasion()));
                     txt4a.setText("STR: "+wholenum.format(dragonoid.getBaseSTR())+" INT: "+wholenum.format(dragonoid.getBaseINT())+" AGI: "+wholenum.format(dragonoid.getBaseAGI()));
-                    txt5.setText("Evasion Rate: "+decF.format(dragonoid.getEvasion()));
-
+                    txt5a.setText(""+dragonoid.getLvl());
+                    info.setText("Hngggg Edgy. Dragons. Rawr.");
                 }
 
                 else if (spin.equals("Gunner")){
 
 
-                    monpic1.setVisibility(View.INVISIBLE);
-                    monpic2.setVisibility(View.INVISIBLE);
-                    monpic3.setVisibility(View.INVISIBLE);
-                    monpic4.setVisibility(View.INVISIBLE);
-                    monpic5.setVisibility(View.VISIBLE);
+                    assBunnyImg.setVisibility(View.INVISIBLE);
+                    warriorImg.setVisibility(View.INVISIBLE);
+                    priestImg.setVisibility(View.INVISIBLE);
+                    dragonoidImg.setVisibility(View.INVISIBLE);
+                    gunnerImg.setVisibility(View.VISIBLE);
 
-                    txt.setText(gunner.getHeroClass());
-                    txt2.setText("ID: "+idstart+gunner.getHeroID() + " Level: "+gunner.getLvl());
-                    txt3.setText("HP: "+wholenum.format(gunner.getBaseHP())+" MP: "+wholenum.format(gunner.getBaseMP()));
-                    txt4.setText("pAtk: "+decF.format(gunner.getpAtk())+" pDef: "+gunner.getpDef()+
-                            "\nmAtk: "+gunner.getmAtk()+" mDef: "+gunner.getmDef());
+                    txtClass.setText(gunner.getHeroClass());
+                    txtNum.setText("ID: "+idstart+gunner.getHeroID());
+                    txt3.setText(""+wholenum.format(gunner.getBaseHP())+"/"+wholenum.format(gunner.getBaseHP()));
+                    txt3a.setText(""+wholenum.format(gunner.getBaseMP())+"/"+wholenum.format(gunner.getBaseMP()));
+                    txt4.setText("Physical Atk: "+wholenum.format(gunner.getpAtk())+"\nPhysical Def: "+wholenum.format(gunner.getpDef())+
+                            "\nMagic Atk: "+wholenum.format(gunner.getmAtk())+"\nMagic Def: "+wholenum.format(gunner.getmDef())+"\nEvasion Rate: "+decF.format(gunner.getEvasion()));
                     txt4a.setText("STR: "+wholenum.format(gunner.getBaseSTR())+" INT: "+wholenum.format(gunner.getBaseINT())+" AGI: "+wholenum.format(gunner.getBaseAGI()));
-                    txt5.setText("Evasion Rate: "+decF.format(gunner.getEvasion()));
-
+                    txt5a.setText(""+gunner.getLvl());
+                    info.setText("It's HIGHH NOOON!\nPew pew pew!");
                 }
 
 
@@ -203,24 +205,25 @@ public class MainActivity extends AppCompatActivity {
                     if ((gunner.getLvl() >= 2) && (gunner.getLvl() <= 40)) {
 
 
-                        txt.setText(gunner.getHeroClass());
-                        txt2.setText("ID: "+idstart+gunner.getHeroID() + " Level: "+gunner.getLvl());
-                        txt3.setText("HP: "+wholenum.format(gunner.baseHPwSTR())+" MP: "+wholenum.format(gunner.baseMPwINT()));
-                        txt4.setText("pAtk: "+decF.format(gunner.pAtkPts())+" pDef: "+decF.format(gunner.pDefPts())+
-                                "\nmAtk: "+decF.format(gunner.mAtkPts())+" mDef: "+decF.format(gunner.mDefPts()));
+                        txtClass.setText(gunner.getHeroClass());
+                        txtNum.setText("ID: "+idstart+gunner.getHeroID());
+                        txt3.setText(""+wholenum.format(gunner.baseHPwSTR())+"/"+wholenum.format(gunner.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(gunner.baseMPwINT())+"/"+wholenum.format(gunner.baseMPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(gunner.pAtkPts())+"\nPhysical Def: "+wholenum.format(gunner.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(gunner.mAtkPts())+"\nMagic Def: "+wholenum.format(gunner.mDefPts())+"\nEvasion Rate: "+decF.format(gunner.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(gunner.strWithGrowth())+" INT: "+wholenum.format(gunner.intWithGrowth())+" AGI: "+wholenum.format(gunner.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(gunner.evasionPts()));
-
+                        txt5a.setText(""+gunner.getLvl());
                     }
                     
                     else if ((gunner.getLvl() == 1)){
-                        txt.setText(gunner.getHeroClass());
-                        txt2.setText("ID: "+idstart+gunner.getHeroID() + " Level: "+gunner.getLvl());
-                        txt3.setText("HP: "+wholenum.format(gunner.getBaseHP())+" MP: "+wholenum.format(gunner.getBaseMP()));
-                        txt4.setText("pAtk: "+decF.format(gunner.getpAtk())+" pDef: "+gunner.getpDef()+
-                                "\nmAtk: "+gunner.getmAtk()+" mDef: "+gunner.getmDef());
+                        txtClass.setText(gunner.getHeroClass());
+                        txtNum.setText("ID: "+idstart+gunner.getHeroID());
+                        txt3.setText(""+wholenum.format(gunner.getBaseHP())+"/"+wholenum.format(gunner.getBaseHP()));
+                        txt3a.setText(""+wholenum.format(gunner.getBaseMP())+"/"+wholenum.format(gunner.getBaseMP()));
+                        txt4.setText("Physical Atk: "+wholenum.format(gunner.getpAtk())+"\nPhysical Def: "+wholenum.format(gunner.getpDef())+
+                                "\nMagic Atk: "+wholenum.format(gunner.getmAtk())+"\nMagic Def: "+wholenum.format(gunner.getmDef())+"\nEvasion Rate: "+decF.format(gunner.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(gunner.getBaseSTR())+" INT: "+wholenum.format(gunner.getBaseINT())+" AGI: "+wholenum.format(gunner.getBaseAGI()));
-                        txt5.setText("Evasion Rate: "+decF.format(gunner.getEvasion()));
+                        txt5a.setText(""+gunner.getLvl());
                     }
 
                     else {
@@ -240,24 +243,25 @@ public class MainActivity extends AppCompatActivity {
                     if ((assassin.getLvl() >= 2) && (assassin.getLvl() <= 40)) {
 
 
-                        txt.setText(assassin.getHeroClass());
-                        txt2.setText("ID: "+idstart+assassin.getHeroID() + " Level: "+assassin.getLvl());
-                        txt3.setText("HP: "+wholenum.format(assassin.baseHPwSTR())+" MP: "+wholenum.format(assassin.baseMPwINT()));
-                        txt4.setText("pAtk: "+decF.format(assassin.pAtkPts())+" pDef: "+decF.format(assassin.pDefPts())+
-                                "\nmAtk: "+decF.format(assassin.mAtkPts())+" mDef: "+decF.format(assassin.mDefPts()));
+                        txtClass.setText(assassin.getHeroClass());
+                        txtNum.setText("ID: "+idstart+assassin.getHeroID());
+                        txt3.setText(""+wholenum.format(assassin.baseHPwSTR())+"/"+wholenum.format(assassin.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(assassin.baseMPwINT())+"/"+wholenum.format(assassin.baseMPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(assassin.pAtkPts())+"\nPhysical Def: "+wholenum.format(assassin.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(assassin.mAtkPts())+" Magic Def: "+wholenum.format(assassin.mDefPts())+"\nEvasion Rate: "+decF.format(assassin.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(assassin.strWithGrowth())+" INT: "+wholenum.format(assassin.intWithGrowth())+" AGI: "+wholenum.format(assassin.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(assassin.evasionPts()));
-
+                        txt5a.setText(""+assassin.getLvl());
                     }
 
                     else if ((assassin.getLvl() == 1)){
-                        txt.setText(assassin.getHeroClass());
-                        txt2.setText("ID: "+idstart+assassin.getHeroID() + " Level: "+assassin.getLvl());
-                        txt3.setText("HP: "+wholenum.format(assassin.getBaseHP())+" MP: "+wholenum.format(assassin.getBaseMP()));
-                        txt4.setText("pAtk: "+decF.format(assassin.getpAtk())+" pDef: "+assassin.getpDef()+
-                                "\nmAtk: "+assassin.getmAtk()+" mDef: "+assassin.getmDef());
+                        txtClass.setText(assassin.getHeroClass());
+                        txtNum.setText("ID: "+idstart+assassin.getHeroID());
+                        txt3.setText(""+wholenum.format(assassin.getBaseHP())+"/"+wholenum.format(assassin.getBaseHP()));
+                        txt3a.setText(""+wholenum.format(assassin.getBaseMP())+"/"+wholenum.format(assassin.getBaseMP()));
+                        txt4.setText("Physical Atk: "+wholenum.format(assassin.getpAtk())+"\nPhysical Def: "+wholenum.format(assassin.getpDef())+
+                                "\nMagic Atk: "+wholenum.format(assassin.getmAtk())+" Magic Def: "+wholenum.format(assassin.getmDef())+"\nEvasion Rate: "+decF.format(assassin.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(assassin.getBaseSTR())+" INT: "+wholenum.format(assassin.getBaseINT())+" AGI: "+wholenum.format(assassin.getBaseAGI()));
-                        txt5.setText("Evasion Rate: "+decF.format(assassin.getEvasion()));
+                        txt5a.setText(""+assassin.getLvl());
                     }
                     
                     else {
@@ -280,24 +284,26 @@ public class MainActivity extends AppCompatActivity {
                     if ((healer.getLvl() >= 2) && (healer.getLvl() <= 40)) {
 
 
-                        txt.setText(healer.getHeroClass());
-                        txt2.setText("ID: "+idstart+healer.getHeroID() + " Level: "+healer.getLvl());
-                        txt3.setText("HP: "+wholenum.format(healer.baseHPwSTR())+" MP: "+wholenum.format(healer.baseMPwINT()));
-                        txt4.setText("pAtk: "+decF.format(healer.pAtkPts())+" pDef: "+decF.format(healer.pDefPts())+
-                                "\nmAtk: "+decF.format(healer.mAtkPts())+" mDef: "+decF.format(healer.mDefPts()));
+                        txtClass.setText(healer.getHeroClass());
+                        txtNum.setText("ID: "+idstart+healer.getHeroID());
+                        txt3.setText(""+wholenum.format(healer.baseHPwSTR())+"/"+wholenum.format(healer.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(healer.baseMPwINT())+"/"+wholenum.format(healer.baseMPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(healer.pAtkPts())+"\nPhysical Def: "+wholenum.format(healer.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(healer.mAtkPts())+" Magic Def: "+wholenum.format(healer.mDefPts())+"\nEvasion Rate: "+decF.format(healer.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(healer.strWithGrowth())+" INT: "+wholenum.format(healer.intWithGrowth())+" AGI: "+wholenum.format(healer.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(healer.evasionPts()));
+                        txt5a.setText(""+healer.getLvl());
 
                     }
 
                     else if ((healer.getLvl() == 1)){
-                        txt.setText(healer.getHeroClass());
-                        txt2.setText("ID: "+idstart+healer.getHeroID() + " Level: "+healer.getLvl());
-                        txt3.setText("HP: "+wholenum.format(healer.getBaseHP())+" MP: "+wholenum.format(healer.getBaseMP()));
-                        txt4.setText("pAtk: "+decF.format(healer.getpAtk())+" pDef: "+healer.getpDef()+
-                                "\nmAtk: "+healer.getmAtk()+" mDef: "+healer.getmDef());
+                        txtClass.setText(healer.getHeroClass());
+                        txtNum.setText("ID: "+idstart+healer.getHeroID());
+                        txt3.setText(""+wholenum.format(healer.getBaseHP())+"/"+wholenum.format(healer.getBaseHP()));
+                        txt3a.setText(""+wholenum.format(healer.getBaseMP())+"/"+wholenum.format(healer.getBaseMP()));
+                        txt4.setText("Physical Atk: "+wholenum.format(healer.getpAtk())+"\nPhysical Def: "+wholenum.format(healer.getpDef())+
+                                "\nMagic Atk: "+wholenum.format(healer.getmAtk())+" Magic Def: "+wholenum.format(healer.getmDef())+"\nEvasion Rate: "+decF.format(healer.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(healer.getBaseSTR())+" INT: "+wholenum.format(healer.getBaseINT())+" AGI: "+wholenum.format(healer.getBaseAGI()));
-                        txt5.setText("Evasion Rate: "+decF.format(healer.getEvasion()));
+                        txt5a.setText(""+healer.getLvl());
                     }
                     
                     else {
@@ -317,24 +323,26 @@ public class MainActivity extends AppCompatActivity {
                     if ((dragonoid.getLvl() >= 2) && (dragonoid.getLvl() <= 40)) {
 
 
-                        txt.setText(dragonoid.getHeroClass());
-                        txt2.setText("ID: "+idstart+dragonoid.getHeroID() + " Level: "+dragonoid.getLvl());
-                        txt3.setText("HP: "+wholenum.format(dragonoid.baseHPwSTR())+" MP: "+wholenum.format(dragonoid.baseMPwINT()));
-                        txt4.setText("pAtk: "+decF.format(dragonoid.pAtkPts())+" pDef: "+decF.format(dragonoid.pDefPts())+
-                                "\nmAtk: "+decF.format(dragonoid.mAtkPts())+" mDef: "+decF.format(dragonoid.mDefPts()));
+                        txtClass.setText(dragonoid.getHeroClass());
+                        txtNum.setText("ID: "+idstart+dragonoid.getHeroID());
+                        txt3.setText(""+wholenum.format(dragonoid.baseHPwSTR())+"/"+wholenum.format(dragonoid.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(dragonoid.baseMPwINT())+"/"+wholenum.format(dragonoid.baseMPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(dragonoid.pAtkPts())+"\nPhysical Def: "+wholenum.format(dragonoid.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(dragonoid.mAtkPts())+"\nMagic Def: "+wholenum.format(dragonoid.mDefPts())+"\nEvasion Rate: "+decF.format(dragonoid.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(dragonoid.strWithGrowth())+" INT: "+wholenum.format(dragonoid.intWithGrowth())+" AGI: "+wholenum.format(dragonoid.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(dragonoid.evasionPts()));
+                        txt5a.setText(""+dragonoid.getLvl());
 
                     }
 
                     else if ((dragonoid.getLvl() == 1)){
-                        txt.setText(dragonoid.getHeroClass());
-                        txt2.setText("ID: "+idstart+dragonoid.getHeroID() + " Level: "+dragonoid.getLvl());
-                        txt3.setText("HP: "+wholenum.format(dragonoid.getBaseHP())+" MP: "+wholenum.format(dragonoid.getBaseMP()));
-                        txt4.setText("pAtk: "+decF.format(dragonoid.getpAtk())+" pDef: "+dragonoid.getpDef()+
-                                "\nmAtk: "+dragonoid.getmAtk()+" mDef: "+dragonoid.getmDef());
+                        txtClass.setText(dragonoid.getHeroClass());
+                        txtNum.setText("ID: "+idstart+dragonoid.getHeroID());
+                        txt3.setText(""+wholenum.format(dragonoid.getBaseHP())+"/"+wholenum.format(dragonoid.getBaseHP()));
+                        txt3a.setText(""+wholenum.format(dragonoid.getBaseMP())+"/"+wholenum.format(dragonoid.getBaseMP()));
+                        txt4.setText("Physical Atk: "+wholenum.format(dragonoid.getpAtk())+"\nPhysical Def: "+wholenum.format(dragonoid.getpDef())+
+                                "\nMagic Atk: "+wholenum.format(dragonoid.getmAtk())+"\nMagic Def: "+wholenum.format(dragonoid.getmDef())+"\nEvasion Rate: "+decF.format(dragonoid.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(dragonoid.getBaseSTR())+" INT: "+wholenum.format(dragonoid.getBaseINT())+" AGI: "+wholenum.format(dragonoid.getBaseAGI()));
-                        txt5.setText("Evasion Rate: "+decF.format(dragonoid.getEvasion()));
+                        txt5a.setText(""+healer.getLvl());
                     }
                     
                     else {
@@ -355,24 +363,26 @@ public class MainActivity extends AppCompatActivity {
                     if ((warrior.getLvl() >= 2) && (warrior.getLvl() <= 40)) {
 
 
-                        txt.setText(warrior.getHeroClass());
-                        txt2.setText("ID: "+idstart+warrior.getHeroID() + " Level: "+warrior.getLvl());
-                        txt3.setText("HP: "+wholenum.format(warrior.baseHPwSTR())+" MP: "+wholenum.format(warrior.baseMPwINT()));
-                        txt4.setText("pAtk: "+decF.format(warrior.pAtkPts())+" pDef: "+decF.format(warrior.pDefPts())+
-                                "\nmAtk: "+decF.format(warrior.mAtkPts())+" mDef: "+decF.format(warrior.mDefPts()));
+                        txtClass.setText(warrior.getHeroClass());
+                        txtNum.setText("ID: "+idstart+warrior.getHeroID());
+                        txt3.setText(""+wholenum.format(warrior.baseHPwSTR())+"/"+wholenum.format(warrior.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(warrior.baseMPwINT())+"/"+wholenum.format(warrior.baseMPwINT()));
+                        txt4.setText("Physical Atk: "+wholenum.format(warrior.pAtkPts())+"\nPhysical Def: "+wholenum.format(warrior.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(warrior.mAtkPts())+"\nMagic Def: "+wholenum.format(warrior.mDefPts())+"\nEvasion Rate: "+decF.format(warrior.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(warrior.strWithGrowth())+" INT: "+wholenum.format(warrior.intWithGrowth())+" AGI: "+wholenum.format(warrior.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(warrior.evasionPts()));
-
+                        txt5a.setText(""+warrior.getLvl());
                     }
 
                     else if ((warrior.getLvl() == 1)){
-                        txt.setText(warrior.getHeroClass());
-                        txt2.setText("ID: "+idstart+warrior.getHeroID() + " Level: "+warrior.getLvl());
-                        txt3.setText("HP: "+wholenum.format(warrior.getBaseHP())+" MP: "+wholenum.format(warrior.getBaseMP()));
-                        txt4.setText("pAtk: "+decF.format(warrior.getpAtk())+" pDef: "+warrior.getpDef()+
-                                "\nmAtk: "+warrior.getmAtk()+" mDef: "+warrior.getmDef());
+                        txtClass.setText(warrior.getHeroClass());
+                        txtNum.setText("ID: "+idstart+warrior.getHeroID());
+                        txt3.setText(""+wholenum.format(warrior.getBaseHP())+"/"+wholenum.format(warrior.getBaseHP()));
+                        txt3a.setText(""+wholenum.format(warrior.getBaseMP())+"/"+wholenum.format(warrior.getBaseMP()));
+                        txt4.setText("Physical Atk: "+wholenum.format(warrior.getpAtk())+"\nPhysical Def: "+wholenum.format(warrior.getpDef())+
+                                "\nMagic Atk: "+wholenum.format(warrior.getmAtk())+"\nMagic Def: "+wholenum.format(warrior.getmDef())+"\nEvasion Rate: "+decF.format(warrior.getEvasion()));
                         txt4a.setText("STR: "+wholenum.format(warrior.getBaseSTR())+" INT: "+wholenum.format(warrior.getBaseINT())+" AGI: "+wholenum.format(warrior.getBaseAGI()));
                         txt5.setText("Evasion Rate: "+decF.format(warrior.getEvasion()));
+                        txt5a.setText(""+warrior.getLvl());
                     }
                     
                     else {
@@ -405,7 +415,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-                else if (spin.equals("Healer")){
+
+                if (spin.equals("Healer")){
                     Intent intent = new Intent(MainActivity.this,HEALER.class);
                     startActivity(intent);
                 }
