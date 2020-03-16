@@ -57,6 +57,7 @@
         android:layout_marginTop="56dp"
         android:text="HERO-MON"
         android:textSize="50dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
