@@ -2,6 +2,7 @@ package fajardo.mcm.edu.ph.inheritancerpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,15 +17,15 @@ import java.text.DecimalFormat;
 
 public class DRAGONOID extends AppCompatActivity {
 
-    TextView txt, txt2, txt3, txt4, txt5 , txt4a, txt5a;
+    TextView txt, txt2, txt3,txt3a, txt4, txt5 , txt4a, txt5a,info;
     ImageView monpic1, monpic2;
     Spinner spinner;
     String spin ;
     EditText editAdd;
     Button btn, btn2;
-    DecimalFormat decF = new DecimalFormat("#.##");
+    DecimalFormat decF = new DecimalFormat("#%");
     DecimalFormat wholenum = new DecimalFormat("#");
-    int idstart = 20200311;
+    int idstart = 202000;
 
 
    DragonTamer dragonTamer = new DragonTamer(4,200,100,40,30,30,20,"Dragon Tamer",4,
@@ -39,15 +40,17 @@ public class DRAGONOID extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dragonoid);
 
-        txt = findViewById(R.id.txt1);
+        txt = findViewById(R.id.textView);
         txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
+        txt3 = findViewById(R.id.textView3);
+        txt3a=findViewById(R.id.textView4);
         txt4 = findViewById(R.id.txt4);
         txt5 = findViewById(R.id.txt5);
         txt4a = findViewById(R.id.txt4a);
         txt5a = findViewById(R.id.txt5a);
-        monpic1 = findViewById(R.id.imageView1);
-        monpic2 = findViewById(R.id.imageView2);
+        info=findViewById(R.id.textViewInfo);
+        monpic1 = findViewById(R.id.imageView15);
+        monpic2 = findViewById(R.id.imageView16);
         spinner = findViewById(R.id.spinner);
         editAdd = findViewById(R.id.editAdd);
         btn = findViewById(R.id.btn);
@@ -73,13 +76,16 @@ public class DRAGONOID extends AppCompatActivity {
 
                     //layout display
                     txt.setText(dragonTamer.getHeroClass());
-                    txt2.setText("ID: "+idstart+dragonTamer.getHeroID() + "a Level: "+dragonTamer.getLvl());
-                    txt3.setText("HP: "+wholenum.format(dragonTamer.baseHPwSTR())+" MP: "+wholenum.format(dragonTamer.baseHPwSTR()));
-                    txt4.setText("pAtk: "+decF.format(dragonTamer.pAtkPts())+" pDef: "+decF.format(dragonTamer.pDefPts())+
-                            "\nmAtk: "+decF.format(dragonTamer.mAtkPts())+" mDef: "+decF.format(dragonTamer.mDefPts()));
+                    txt2.setText("ID: "+idstart+dragonTamer.getHeroID());
+                    txt5a.setText(""+dragonTamer.getLvl());
+                    txt3.setText(""+wholenum.format(dragonTamer.baseHPwSTR())+"/"+wholenum.format(dragonTamer.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(dragonTamer.baseHPwSTR())+"/"+wholenum.format(dragonTamer.baseHPwSTR()));
+                    txt4.setText("Physical Atk: "+wholenum.format(dragonTamer.pAtkPts())+" \nPhysical Def: "+wholenum.format(dragonTamer.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(dragonTamer.mAtkPts())+" \nMagic Def: "+wholenum.format(dragonTamer.mDefPts())+"\nEvasion Rate: "+decF.format(dragonTamer.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(dragonTamer.strWithGrowth())+" INT: "+wholenum.format(dragonTamer.intWithGrowth())+
                             " AGI: "+wholenum.format(dragonTamer.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(dragonTamer.evasionPts()));
+                    info.setText("How to train your edgy dragon (2010)");
+                    
 
                 }
 
@@ -93,13 +99,17 @@ public class DRAGONOID extends AppCompatActivity {
 
                     //layout display
                     txt.setText(elementalDracomancer.getHeroClass());
-                    txt2.setText("ID: "+idstart+elementalDracomancer.getHeroID() + "b Level: "+elementalDracomancer.getLvl());
-                    txt3.setText("HP: "+wholenum.format(elementalDracomancer.baseHPwSTR())+" MP: "+wholenum.format(elementalDracomancer.baseHPwSTR()));
-                    txt4.setText("pAtk: "+decF.format(elementalDracomancer.pAtkPts())+" pDef: "+decF.format(elementalDracomancer.pDefPts())+
-                            "\nmAtk: "+decF.format(elementalDracomancer.mAtkPts())+" mDef: "+decF.format(elementalDracomancer.mDefPts()));
+                    txt2.setText("ID: "+idstart+elementalDracomancer.getHeroID());
+                    txt5a.setText(""+elementalDracomancer.getLvl());
+                    txt3.setText(""+wholenum.format(elementalDracomancer.baseHPwSTR())+"/"+wholenum.format(elementalDracomancer.baseHPwSTR()));
+                    txt3a.setText(""+wholenum.format(elementalDracomancer.baseHPwSTR())+"/"+wholenum.format(elementalDracomancer.baseHPwSTR()));
+                    txt4.setText("Physical Atk: "+wholenum.format(elementalDracomancer.pAtkPts())+" \nPhysical Def: "+wholenum.format(elementalDracomancer.pDefPts())+
+                            "\nMagic Atk: "+wholenum.format(elementalDracomancer.mAtkPts())+" \nMagic Def: "+wholenum.format(elementalDracomancer.mDefPts())+"\nEvasion Rate: "+decF.format(dragonTamer.evasionPts()));
                     txt4a.setText("STR: "+wholenum.format(elementalDracomancer.strWithGrowth())+" INT: "+wholenum.format(elementalDracomancer.intWithGrowth())+
                             " AGI: "+wholenum.format(elementalDracomancer.agiWithGrowth()));
-                    txt5.setText("Evasion Rate: "+decF.format(elementalDracomancer.evasionPts()));
+                    info.setText("Nananananaanana \nNot Batman!!!\nbut Dragon hybrid thing man!");
+                    txt.setTextSize(10);
+              
 
                 }
 
@@ -131,13 +141,15 @@ public class DRAGONOID extends AppCompatActivity {
 
 
                         txt.setText(elementalDracomancer.getHeroClass());
-                        txt2.setText("ID: "+idstart+elementalDracomancer.getHeroID() + "b Level: "+elementalDracomancer.getLvl());
-                        txt3.setText("HP: "+wholenum.format(elementalDracomancer.baseHPwSTR())+" MP: "+wholenum.format(elementalDracomancer.baseHPwSTR()));
-                        txt4.setText("pAtk: "+decF.format(elementalDracomancer.pAtkPts())+" pDef: "+decF.format(elementalDracomancer.pDefPts())+
-                                "\nmAtk: "+decF.format(elementalDracomancer.mAtkPts())+" mDef: "+decF.format(elementalDracomancer.mDefPts()));
+                        txt2.setText("ID: "+idstart+elementalDracomancer.getHeroID());
+                        txt5a.setText(""+elementalDracomancer.getLvl());
+                        txt3.setText(""+wholenum.format(elementalDracomancer.baseHPwSTR())+"/"+wholenum.format(elementalDracomancer.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(elementalDracomancer.baseHPwSTR())+"/"+wholenum.format(elementalDracomancer.baseHPwSTR()));
+                        txt4.setText("Physical Atk: "+wholenum.format(elementalDracomancer.pAtkPts())+" \nPhysical Def: "+wholenum.format(elementalDracomancer.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(elementalDracomancer.mAtkPts())+" \nMagic Def: "+wholenum.format(elementalDracomancer.mDefPts())+("Evasion Rate: "+decF.format(elementalDracomancer.evasionPts())));
                         txt4a.setText("STR: "+wholenum.format(elementalDracomancer.strWithGrowth())+" INT: "+wholenum.format(elementalDracomancer.intWithGrowth())+
                                 " AGI: "+wholenum.format(elementalDracomancer.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(elementalDracomancer.evasionPts()));
+                        
 
                     }
 
@@ -160,13 +172,15 @@ public class DRAGONOID extends AppCompatActivity {
 
 
                         txt.setText(dragonTamer.getHeroClass());
-                        txt2.setText("ID: "+idstart+dragonTamer.getHeroID() + "a Level: "+dragonTamer.getLvl());
-                        txt3.setText("HP: "+wholenum.format(dragonTamer.baseHPwSTR())+" MP: "+wholenum.format(dragonTamer.baseHPwSTR()));
-                        txt4.setText("pAtk: "+decF.format(dragonTamer.pAtkPts())+" pDef: "+decF.format(dragonTamer.pDefPts())+
-                                "\nmAtk: "+decF.format(dragonTamer.mAtkPts())+" mDef: "+decF.format(dragonTamer.mDefPts()));
+                        txt2.setText("ID: "+idstart+dragonTamer.getHeroID());
+                        txt5a.setText(""+dragonTamer.getLvl());
+                        txt3.setText(""+wholenum.format(dragonTamer.baseHPwSTR())+"/"+wholenum.format(dragonTamer.baseHPwSTR()));
+                        txt3a.setText(""+wholenum.format(dragonTamer.baseHPwSTR())+"/"+wholenum.format(dragonTamer.baseHPwSTR()));
+                        txt4.setText("Physical Atk: "+wholenum.format(dragonTamer.pAtkPts())+" \nPhysical Def: "+wholenum.format(dragonTamer.pDefPts())+
+                                "\nMagic Atk: "+wholenum.format(dragonTamer.mAtkPts())+" \nMagic Def: "+wholenum.format(dragonTamer.mDefPts())+("Evasion Rate: "+decF.format(elementalDracomancer.evasionPts())));
                         txt4a.setText("STR: "+wholenum.format(dragonTamer.strWithGrowth())+" INT: "+wholenum.format(dragonTamer.intWithGrowth())+
                                 " AGI: "+wholenum.format(dragonTamer.agiWithGrowth()));
-                        txt5.setText("Evasion Rate: "+decF.format(dragonTamer.evasionPts()));
+                        
                     }
 
 
@@ -176,10 +190,14 @@ public class DRAGONOID extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 }
+            }
+        });
 
-
-
-
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(DRAGONOID.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 
